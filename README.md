@@ -53,6 +53,25 @@ java java/AdivinheNumero.java
 ```
 Alternativa com compilação: `javac java/AdivinheNumero.java` e depois `java -cp java AdivinheNumero`.
 
+## Versões com janela gráfica
+
+Além das versões de terminal, cada linguagem tem uma versão com janela, com o mesmo jogo.
+
+| Linguagem  | Arquivo | Como rodar | Dependência extra |
+|------------|---------|------------|-------------------|
+| Python     | `python/adivinhe_numero_gui.py` | `python python/adivinhe_numero_gui.py` | nenhuma (tkinter já vem com o Python) |
+| Lua        | `lua/gui/` | `"C:\Program Files\LOVE\love.exe" lua/gui` | LÖVE 11 (instalado neste PC) |
+| TypeScript | `typescript/gui/index.html` | abrir o arquivo no navegador | nenhuma (roda no navegador) |
+| C          | `c/adivinhe_numero_gui.c` | `gcc -mwindows c/adivinhe_numero_gui.c -o c/adivinhe_numero_gui.exe -lgdi32` | nenhuma (API Win32 + gcc) |
+| C++        | `cpp/adivinhe_numero_gui.cpp` | `g++ -mwindows cpp/adivinhe_numero_gui.cpp -o cpp/adivinhe_numero_gui.exe -lgdi32` | nenhuma (API Win32 + g++) |
+| Rust       | `rust/adivinhe_gui/` | `cargo run --release --manifest-path rust/adivinhe_gui/Cargo.toml` | baixa o `eframe`/`egui` do crates.io na primeira vez |
+| C#         | `csharp/AdivinheNumeroGui/` | `dotnet run --project csharp/AdivinheNumeroGui` | nenhuma (WinForms vem com o .NET) |
+| Java       | `java/AdivinheNumeroGui.java` | `java java/AdivinheNumeroGui.java` | nenhuma (Swing vem com o JDK) |
+
+Observações:
+- A versão TypeScript usa o arquivo `adivinhe_numero.js` já compilado. Para recompilar: `tsc typescript/gui/adivinhe_numero.ts --strict --lib es2020,dom --target es2020`.
+- A versão Lua precisa de OpenGL 2.1. Neste PC o OpenGL estava em modo genérico (GDI), e o LÖVE não abriu a janela. Os arquivos foram checados só na sintaxe.
+
 ## Dependências deste PC
 
 Verificado em `C:\Users\Skyro` (Windows):
